@@ -1,24 +1,21 @@
-function countVowels(str) {
-    let count = 0;
-    if (str === undefined) {
-        return ("String is undefined");
-    } else if (str !== undefined) {
-        const formattedString = str.toLowerCase();
-        for (let i = 0; i < formattedString.length; i++) {
-            if (formattedString[i] === "a" || 
-                formattedString[i] === "e" || 
-                formattedString[i] === "i" || 
-                formattedString[i] === "o" || 
-                formattedString[i] === "u"
-            ) {
+function countVowels(str) {  //function to count the vowels in a string
+    if (typeof str !== 'string') {    //returns 0 if if the input is not a string
+        return 0;
+    } else if (str === "") {  //returns 0 if string is empty
+        return 0;
+    } else {
+        let count = 0;
+        for (let i = 0; i < str.toLowerCase().length; i++) {    //iterates over letters in the string to test if they are a vowel
+            if (str.toLowerCase()[i] === "a" || 
+                str.toLowerCase()[i] === "e" || 
+                str.toLowerCase()[i] === "i" || 
+                str.toLowerCase()[i] === "o" || 
+                str.toLowerCase()[i] === "u") {
                 count++;
             }
-        
         }
-    }
-    return count;
+        return count;  //returns a count of vowels (if the data is a string and not empty)
+    }   
 }
 
-
-
-module.exports = countVowels;
+module.exports = countVowels;  //export module for jest
